@@ -1,7 +1,7 @@
 from pathlib import Path
 from collections import Counter
 
-content = Path('numbers-list.txt').read_text()
+content = Path('num1.txt').read_text()
 list_content  = content.split()
 int_list =[x for x in content]
 
@@ -29,6 +29,7 @@ print("part one answer " + str(a))
 omega = 0
 for x in list2:
    val = list1.count(x)
+  # print(val)
    omega += val * int(x)
 print("part two answer " + str(omega))   
 
