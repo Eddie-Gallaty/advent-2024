@@ -26,4 +26,3 @@ for report in reports:
     
 #Answer for part one :)           
 print("number of safe reports after counting "+str(safe_reports))
-
