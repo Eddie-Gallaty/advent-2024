@@ -14,9 +14,9 @@ rep_mul = []
 #3. cast list to int - not actually needed with eval()
 #4 perform multiplication and then add all to a final var
 
-#1
+
 for result in results:
-    #2
+    # 1 and 2
     rep_mul.append(re.sub(r"mul\((\d+),(\d+)\)", r"\1 * \2", result)) #nasty
     #print(rep_mul)
 
