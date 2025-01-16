@@ -1,14 +1,5 @@
 import re
-text = "don't()7297jhmul(23,23)jskicnbdo()kahjsdmnbmul(4,3){"
-pattern = re.compile(r"(?:don't\(\).*?mul\(\d+,\d+\))|(?<!don't\(\))(mul\(\d+,\d+\)|do\(\))")
 
-with open("puzzle.txt") as f:
-    text = f.read()
-    results = pattern.findall(text)
-eval_num = 0
-rep_mul = []
-
-regex = re.compile(r'mul\(\d{1,3},\d{1,3}\)') #gross
 #1 find all the do
 #2 figure out how to also include the mul(,)
 #3 add to list
@@ -17,7 +8,31 @@ regex = re.compile(r'mul\(\d{1,3},\d{1,3}\)') #gross
 #6 ???
 #7 profit
 
+#text = "don't()7297jhmul(23,23)jskicnbdo()kahjsdmnbmul(4,3){"
+
+#1 and 2 he he he
+pattern = re.compile(r"(?:don't\(\).*?mul\(\d+,\d+\))|(?<!don't\(\))(mul\(\d+,\d+\)|do\(\))")
+
+with open("puzzle.txt") as f:
+    text = f.read()
+    results = pattern.findall(text)
+
+eval_num = 0
+rep_mul = []
+
+
+#3
 reg = pattern.findall(text)
+
+#4
 new_list = [item for item in reg if item != "" and item != "do()"]
 
-print(new_list)
+for result in new_list:
+    # 1 and 2
+    rep_mul.append(re.sub(r"mul\((\d+),(\d+)\)", r"\1 * \2", result)) #nasty
+    #print(rep_mul)
+
+for rep in rep_mul:
+    eval_num += eval(rep)
+
+print(eval_num)
