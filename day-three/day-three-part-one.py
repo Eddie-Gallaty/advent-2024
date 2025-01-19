@@ -6,6 +6,7 @@ regex = re.compile(r'mul\(\d{1,3},\d{1,3}\)') #gross
 with open("puzzle.txt") as f:
     text = f.read()
     results = regex.findall(text)
+print(results)
 eval_num = 0
 rep_mul = []
 #todo
