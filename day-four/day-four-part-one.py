@@ -1,4 +1,4 @@
-#part one using recursive dfs
+#part one using recursive dfs!
 
 def search(word, grid):
     row, col = len(grid), len(grid[0])
